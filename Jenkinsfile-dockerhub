@@ -6,12 +6,12 @@ pipeline {
      }
     environment {
     DOCKERHUB_CREDENTIALS = credentials('sylviewette-dockerhub')
-    APP_NAME = "sylviewette/amazon"
+    APP_NAME = "sylviewette/amazon1"
     }
     stages { 
         stage('SCM Checkout') {
             steps{
-           git branch: 'main', url: 'https://github.com/sylviewn/Amazon-clone-Dockerized.git'
+           git branch: 'main', url: 'https://github.com/sylviewn/Amazon-Dockerized.git'
             }
         }
         // run sonarqube test
@@ -47,7 +47,7 @@ pipeline {
         }
         stage('Trigger ManifestUpdate') {
              steps{
-                build job: 'argocd-manifest-amazon', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]     
+                build job: 'ArgoCD-Manifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]     
 
             } 
            } 

@@ -14,17 +14,7 @@ pipeline {
            git branch: 'main', url: 'https://github.com/sylviewn/Amazon-Dockerized.git'
             }
         }
-        // run sonarqube test
-        stage('Run Sonarqube') {
-            environment {
-                scannerHome = tool 'sylviewn-sonarqube';
-            }
-            steps {
-              withSonarQubeEnv(credentialsId: 'sylviewn-sonar', installationName: 'sylviewn sonarqube') {
-                sh "${scannerHome}/bin/sonar-scanner"
-              }
-            }
-        }
+
         stage('Build docker image') {
             steps {  
                 sh 'docker build -t $APP_NAME:$BUILD_NUMBER .'

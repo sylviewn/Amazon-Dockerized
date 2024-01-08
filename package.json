@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mui/icons-material": "latest",  // Updated from @material-ui/icons
+    "@mui/icons-material": "latest",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -19,7 +19,6 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "test": "mocha",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -45,6 +44,7 @@
   },
   "devDependencies": {
     "jest-diff": "^29.7.0",
-    "diff-sequences": "latest"  // Specify a different version if necessary
+    "diff-sequences": "latest"
   }
 }
+

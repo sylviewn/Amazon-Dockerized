@@ -22,7 +22,7 @@ pipeline {
         }
        stage('login to dockerhub') {
             steps{
-                withCredentials([usernamePassword(credentialsId: 'sylviewette-dockerhub', passwordVariable: 'DOCKERHUB_PSW', usernameVariable: 'sylviewette')]) {
+                withCredentials([usernamePassword(credentialsId: 'sylviewette-dockerhub', passwordVariable: 'DOCKERHUB_PSW', usernameVariable: 'DOCKERHUB_USR')]) {
                     sh 'echo $DOCKERHUB_PSW | docker login -u $DOCKERHUB_USR --password-stdin'
                  }
             }

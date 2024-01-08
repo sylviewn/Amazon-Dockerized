@@ -6,7 +6,7 @@ pipeline {
      }
     environment {
     DOCKERHUB_CREDENTIALS = credentials('sylviewette-dockerhub')
-    APP_NAME = "sylviewette/amazon2"
+    APP_NAME = "sylviewette/amazon"
     }
     stages { 
         stage('SCM Checkout') {

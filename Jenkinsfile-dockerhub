@@ -6,7 +6,7 @@ pipeline {
      }
     environment {
     DOCKERHUB_CREDENTIALS = credentials('sylviewette-dockerhub')
-    APP_NAME = "sylviewette/amazon"
+    APP_NAME = "sylviewette/amazon2"
     }
     stages { 
         stage('SCM Checkout') {
@@ -22,9 +22,7 @@ pipeline {
         }
        stage('login to dockerhub') {
             steps{
-                withCredentials([usernamePassword(credentialsId: 'sylviewette-dockerhub', passwordVariable: 'DOCKERHUB_PSW', usernameVariable: 'DOCKERHUB_USR')]) {
                     sh 'echo $DOCKERHUB_PSW | docker login -u $DOCKERHUB_USR --password-stdin'
-                 }
             }
        }
 
